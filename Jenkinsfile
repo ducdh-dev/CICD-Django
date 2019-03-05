@@ -6,7 +6,7 @@ node {
 
         stage 'Deploy'
             sh 'sh ./deployment/deploy_prod.sh'
-            
+
     }
 
     catch (err) {
