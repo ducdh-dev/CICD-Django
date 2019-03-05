@@ -3,10 +3,8 @@
 node {
 
     try {
-
         stage 'Deploy'
             sh 'sh /home/ducdh/app/CICD-Django/deployment/deploy_prod.sh'
-
     }
 
     catch (err) {
