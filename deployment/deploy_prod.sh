@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ssh root@192.168.100.19 <<EOF
+ssh -v -i /home/ducdh/.ssh/id_rsa root@192.168.100.19 <<EOF
   cd /home/ducdh/app/CICD-Django/cicd
   source ../env/bin/activate
   git pull
