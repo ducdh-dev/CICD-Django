@@ -5,7 +5,7 @@ node {
     try {
 
         stage 'Deploy'
-            sh 'sh ./deployment/deploy_prod.sh'
+            sh 'sh /home/ducdh/app/CICD-Django/deployment/deploy_prod.sh'
 
     }
 
