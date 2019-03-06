@@ -7,7 +7,9 @@ node {
         stage 'Checkout'
             checkout scm
 
-            slackSend color: "warning", message: "Started `${env.JOB_NAME}#${env.BUILD_NUMBER}`\n\n_The changes:_\n"
+            sh 'git log HEAD^..HEAD --pretty="%h %an - %s" > git_change.txt'
+            def lastChanges = readFile('git_change.txt')
+            slackSend color: "warning", message: "Started `${env.JOB_NAME}#${env.BUILD_NUMBER}`\n\n_The changes:_\n${lastChanges}"
 
         stage 'Deploy'
             sh 'sh /home/ducdh/app/CICD-Django/deployment/deploy_prod.sh'
