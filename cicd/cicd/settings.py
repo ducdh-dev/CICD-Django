@@ -38,7 +38,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'article',
+    'django_jenkins',
 ]
+
+PROJECT_APPS = (
+ 'article'
+)
+
+JENKINS_TASKS = (
+ 'django_jenkins.tasks.run_pep8',
+ 'django_jenkins.tasks.run_pyflakes'
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
